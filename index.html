@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefK | Renewing your love for food</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div id="loader">
+        <div id="loader-circle"></div>
+    </div>
+    <!--  -->
+    <div id="popup">
+    
+        <div class="left1">
+            <button id="cross1" class="close">x</button>
+
+            <div class="areaC">
+                <h1>Area: <span class="modalText" id="areaIN"></span> </h1>
+                <h1></h1>
+                <h1>Category: <span class="modalText" id="catIN"></span></h1>
+            </div>
+            <h1 class="head">Ingredients:</h1>
+
+            <div id="ingredients">
+                <ul id="ingList">
+                </ul>
+            </div>
+            
+            <h1 class="head">Instructions:</h1>
+            <div id="instructions">
+                <p id="instPara"></p>
+            </div>
+
+        </div>
+    
+        <div class="right1">
+            <button id="cross2" class="close">x</button>
+            <h2 id="popupName"></h2>
+            <a id="imgLink" href="" class="popupImgDiv">
+                <img id="popupImg" src="" alt=""></a>
+            </a>
+            <iframe width="100%" height="50%" src="https://www.youtube.com/embed/5Iy0MCowSvA" frameborder="0" allowfullscreen></iframe>
+    
+        </div>
+    </div>
+
+
+
+    <nav>
+        <div class="logo">
+            <div class="icon">
+                <img src="./assets/logo.png" alt="">
+            </div>
+            <div class="title">
+                <span>ChefK</span>
+            </div>
+        </div>
+        <div class="links">
+            <div class="greenStyle">Home</div>
+            <div class="greenStyle">Recipes</div>
+            <div class="greenStyle">Contact Us</div>
+        </div>
+    </nav>
+
+
+    <div class="section">
+        <div class="left">
+            <div class="input">
+                <input type="text" placeholder="Recipe for a meal?" name="" id="search">
+                <img id="searchGlass" src="./assets/search.png" alt="">
+            </div>
+            <div class="quote">
+                "Every dish whispers a delectable tale, and every bite narrates a flavorful story."
+            </div>
+            <div class="btns">
+                <button class="btn" id="btn1">Search</button>
+                <button  id="discover" class="btn">Discover+</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="./assets/food.png" alt="">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="recipeContainer">
+        <h1>Delve into today's culinary adventure with our featured recipe:</h1>
+        <img id="arrow" class="arrow" src="./assets/arrow-removebg-preview.png" alt="">
+        
+        <div class="recipeBox">
+            <img id="mainImg" src="" alt="">
+            
+            <h2 id="recipeName"></h2>
+            
+        </div>
+
+    </div> 
+    <hr>
+    
+    <div id="searchResults">
+        <h1>Search results for <span id="searchRl"></span></h1>
+        <ul id="resultContainer">
+            
+        </ul>
+        <div style="text-align: center;">
+            <h2 id="fail">
+                Sorry, no results found. Try searching for something else.
+            </h2>
+        </div>
+    </div>
+
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
