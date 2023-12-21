@@ -39,6 +39,13 @@ function fetchMeal() {
       console.log(ingredientsData(data));
       renderIngredients(renderIngredientImage(data), ingredientsData(data));
       renderInstructions(data);
+      title.innerHTML = data.strMeal;
+      foodImg.src = data.strMealThumb;
+      foodImg.addEventListener("click", () => {
+        fetchByID(data.idMeal);
+        popup.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      });
     })
     .catch((err) => {
       loader.style.display = "none";
@@ -47,8 +54,6 @@ function fetchMeal() {
 }
 
 function renderMeal(data) {
-  title.innerHTML = data.strMeal;
-  foodImg.src = data.strMealThumb;
   popupImg.src = data.strMealThumb;
   popupName.innerHTML = data.strMeal;
   popupImgLink.href = data.strSource;
@@ -76,11 +81,7 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-foodImg.addEventListener("click", () => {
-  popup.style.display = "flex";
-  document.body.style.overflow = "hidden";
-  window.location.href = `#cross2`;
-});
+
 
 cross1.addEventListener("click", () => {
   popup.style.display = "none";
@@ -190,7 +191,7 @@ function renderFoodArray(meals) {
     const span = document.createElement("span");
     img.src = meals[i].strMealThumb;
     span.innerHTML = meals[i].strMeal;
-    li.setAttribute("onclick", `fetchByID(${meals[i].idMeal})`);
+    li.setAttribute("onclick", `fetchPopUp(${meals[i].idMeal})`);
     li.appendChild(img);
     li.appendChild(span);
     resultList.appendChild(li);
@@ -199,6 +200,13 @@ function renderFoodArray(meals) {
   // console.log(meals[0].strMeal)
 }
 // 
+
+function fetchPopUp(Id) {
+  fetchByID(Id);
+  popup.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
 function fetchByID(Id) {
   loader.style.display = "flex";  
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Id}`)
@@ -206,8 +214,9 @@ function fetchByID(Id) {
     .then((data) => {
       renderMeal(data.meals[0]);
       loader.style.display = "none";
-      mealText.innerHTML = "Enjoy your selected meal! Bon appétit!";
-      scroll(document.getElementById("arrow"));
+      popup.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      // scroll(document.getElementById("arrow"));
     });
 }
 
