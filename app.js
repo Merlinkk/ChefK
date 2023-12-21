@@ -19,6 +19,7 @@ const popupImg = document.getElementById("popupImg"); // <img id="popupImg">
 const discover = document.getElementById("discover"); // <button id="discover">
 
 const loader = document.getElementById("loader");
+const mealText = document.querySelector(".mealText");
 
 loader.style.display = "flex";
 fetchMeal(title, foodImg);
@@ -32,6 +33,7 @@ function fetchMeal() {
     .then((data) => {
       loader.style.display = "none";
       foodContainerMain.style.display = "flex";
+      mealText.innerHTML = "Delve into today's culinary adventure with our featured recipe, Bon appétit!";
       console.log(data);
       renderMeal(data);
       console.log(ingredientsData(data));
@@ -204,6 +206,7 @@ function fetchByID(Id) {
     .then((data) => {
       renderMeal(data.meals[0]);
       loader.style.display = "none";
+      mealText.innerHTML = "Enjoy your selected meal! Bon appétit!";
       scroll(document.getElementById("arrow"));
     });
 }

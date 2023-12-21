@@ -436,6 +436,28 @@ hr {
   background: #555; /* color of the scrollbar on hover */
 }
 
+footer{
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.664);
+  display: flex;
+  justify-content: space-between;
+}
+.foot{
+  color: #7ae18c;
+}
+.footDiv{
+  padding: 50px;
+}
+footer h1{
+  font-size: 60px;
+}
+footer h3{
+  font-size: 40px;
+}
+#imgFoot{
+  height: 80%;
+}
+
 @media (max-width: 500px) and (max-height: 1000px) {
   .section {
     flex-direction: column;
@@ -446,6 +468,9 @@ hr {
   }
   .links {
     display: none;
+  }
+  #popupImg{
+    width: 80%;
   }
   .input {
     width: 100%;
@@ -621,5 +646,20 @@ hr {
   #ingredients {
     height: 200px;
     overflow: auto;
+  }
+  footer h1{
+    font-size: 30px;
+  }
+  footer h3{
+    font-size: 20px;
+  }
+  #imgFoot{
+    height: 90%;
+  }
+  .footDiv{
+    padding: 35px;
+  }
+  footer{
+    height: 125px;
   }
 }
