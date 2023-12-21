@@ -46,18 +46,26 @@ function fetchMeal() {
       mealText.innerHTML =
         "Delve into today's culinary adventure with our featured recipe, Bon appétit!";
       console.log(data);
+      foodImg.setAttribute("onclick", `showPop(${data.idMeal})`);
       title.innerHTML = data.strMeal;
       foodImg.src = data.strMealThumb;
-      foodImg.addEventListener("click", () => {
-        fetchByID(data.idMeal);
-        popup.style.display = "flex";
-        document.body.style.overflow = "hidden";
-      });
+      
     })
     .catch((err) => {
       loader.style.display = "none";
       console.error(err);
     });
+}
+
+// foodImg.addEventListener("click", () => {
+//   popup.style.display = "flex";
+//   document.body.style.overflow = "hidden";
+// });
+
+function showPop(id){
+  fetchByID(id)
+  popup.style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 
 function renderMeal(data) {
