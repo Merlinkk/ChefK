@@ -336,6 +336,18 @@ hr {
 #searchResults div {
   padding: 10px;
 }
+#mainImg{
+  cursor: pointer;
+}
+#resultContainer li{
+  cursor: pointer;
+}
+#yTlogo{
+  display: none;
+  padding: 20px;
+  justify-content: center; 
+  align-items: center;
+}
 
 /* nav{
     position: fixed;
@@ -461,6 +473,12 @@ footer h3{
 @media (max-width: 500px) and (max-height: 1000px) {
   .section {
     flex-direction: column;
+  }
+  #yTlogo{
+    display: flex;
+  }
+  .areaC{
+    padding: 15px;
   }
   nav {
     position: static;

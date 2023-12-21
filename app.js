@@ -8,6 +8,10 @@ const popupImgLink = document.getElementById("imgLink");
 const cross1 = document.getElementById("cross1");
 const cross2 = document.getElementById("cross2");
 
+const youtubeLink = document.getElementById('yLink')
+
+// const youtube = document.getElementById("yTlogo");
+
 const fail = document.getElementById("fail");
 
 const searchBtn = document.getElementById("btn1");
@@ -21,6 +25,8 @@ const discover = document.getElementById("discover"); // <button id="discover">
 const loader = document.getElementById("loader");
 const mealText = document.querySelector(".mealText");
 
+// youtube.style.display = "none";
+
 loader.style.display = "flex";
 fetchMeal(title, foodImg);
 
@@ -31,14 +37,15 @@ function fetchMeal() {
     .then((res) => res.json())
     .then((data) => data.meals[0])
     .then((data) => {
-      loader.style.display = "none";
-      foodContainerMain.style.display = "flex";
-      mealText.innerHTML = "Delve into today's culinary adventure with our featured recipe, Bon appétit!";
-      console.log(data);
       renderMeal(data);
+      renderInstructions(data);
       console.log(ingredientsData(data));
       renderIngredients(renderIngredientImage(data), ingredientsData(data));
-      renderInstructions(data);
+      loader.style.display = "none";
+      foodContainerMain.style.display = "flex";
+      mealText.innerHTML =
+        "Delve into today's culinary adventure with our featured recipe, Bon appétit!";
+      console.log(data);
       title.innerHTML = data.strMeal;
       foodImg.src = data.strMealThumb;
       foodImg.addEventListener("click", () => {
@@ -49,7 +56,7 @@ function fetchMeal() {
     })
     .catch((err) => {
       loader.style.display = "none";
-      console.error(err)
+      console.error(err);
     });
 }
 
@@ -57,6 +64,8 @@ function renderMeal(data) {
   popupImg.src = data.strMealThumb;
   popupName.innerHTML = data.strMeal;
   popupImgLink.href = data.strSource;
+
+  youtubeLink.href = data.strYoutube
 
   document.getElementById("areaIN").innerHTML = data.strArea;
   document.getElementById("catIN").innerHTML = data.strCategory;
@@ -80,8 +89,6 @@ window.addEventListener("keydown", (e) => {
     document.body.style.overflow = "auto";
   }
 });
-
-
 
 cross1.addEventListener("click", () => {
   popup.style.display = "none";
@@ -123,6 +130,7 @@ function renderIngredientImage(data) {
 }
 
 function renderIngredients(imageLinks, ingredients) {
+  ingredientList.innerHTML=""
   for (let i = 0; i < ingredients.length; i++) {
     const li = document.createElement("li");
     const img = document.createElement("img");
@@ -174,12 +182,12 @@ function fetchByCategory(category) {
       return data.meals;
     })
     .then((meals) => {
-        renderFoodArray(meals)
-        loader.style.display = "none";
+      renderFoodArray(meals);
+      loader.style.display = "none";
     })
     .catch((err) => {
-        loader.style.display = "none";
-        fail.style.display = "initial";
+      loader.style.display = "none";
+      fail.style.display = "initial";
     });
 }
 
@@ -199,7 +207,7 @@ function renderFoodArray(meals) {
   }
   // console.log(meals[0].strMeal)
 }
-// 
+//
 
 function fetchPopUp(Id) {
   fetchByID(Id);
@@ -208,11 +216,13 @@ function fetchPopUp(Id) {
 }
 
 function fetchByID(Id) {
-  loader.style.display = "flex";  
+  loader.style.display = "flex";
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Id}`)
     .then((res) => res.json())
     .then((data) => {
       renderMeal(data.meals[0]);
+      renderIngredients(renderIngredientImage(data.meals[0]), ingredientsData(data.meals[0]));
+      renderInstructions(data.meals[0]);
       loader.style.display = "none";
       popup.style.display = "flex";
       document.body.style.overflow = "hidden";
@@ -226,6 +236,7 @@ function scroll(dest) {
 }
 
 discover.addEventListener("click", () => {
+  loader.style.display='flex'
   fetchMeal(title, foodImg);
   scroll(foodImg);
 });
