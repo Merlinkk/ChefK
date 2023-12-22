@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Pacifico&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Itim&family=Pacifico&family=Permanent+Marker&display=swap');
 * {
   font-family: "Caveat", cursive;
   margin: 0;
@@ -6,6 +10,14 @@
 }
 body {
   background-image: url(./assets/back.png);
+  user-select: none;
+}
+.description{
+  font-family: itim;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
 }
 .icon img {
   width: 100px;
@@ -73,6 +85,7 @@ nav {
   padding: 20px;
 }
 .quote {
+  font-family: handlee;
   color: white;
   font-size: 50px;
   padding: 30px;
@@ -239,7 +252,7 @@ iframe {
 
 #ingList {
   display: grid;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(5,1fr);
   list-style: none;
   font-size: 20px;
 }
@@ -640,5 +653,8 @@ footer h3{
   }
   footer{
     height: 125px;
+  }
+  .description{
+    font-size: 15px;
   }
 }
