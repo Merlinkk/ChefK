@@ -1,3 +1,4 @@
+<img src="https://github.com/Merlinkk/ChefK/assets/80953200/e4e61cb5-b685-4b2e-9b9d-eea8ab1ab0d3" height = "125px">
 ![logo](https://github.com/Merlinkk/ChefK/assets/80953200/e4e61cb5-b685-4b2e-9b9d-eea8ab1ab0d3)
 
 # ChefK - Unveiling Culinary Excellence 🍳
