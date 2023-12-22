@@ -1,5 +1,4 @@
 <img src="https://github.com/Merlinkk/ChefK/assets/80953200/e4e61cb5-b685-4b2e-9b9d-eea8ab1ab0d3" height = "125px">
-![logo](https://github.com/Merlinkk/ChefK/assets/80953200/e4e61cb5-b685-4b2e-9b9d-eea8ab1ab0d3)
 
 # ChefK - Unveiling Culinary Excellence 🍳
 Welcome to ChefK, where culinary artistry meets innovation! Crafted with HTML, CSS, and JavaScript, ChefK is your gateway to a world of exquisite flavors and gastronomic delights. Whether you're a seasoned chef or an aspiring home cook, ChefK is your companion on the journey to culinary mastery.         
