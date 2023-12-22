@@ -655,6 +655,7 @@ footer h3{
     height: 125px;
   }
   .description{
+    display:none;
     font-size: 15px;
   }
 }
