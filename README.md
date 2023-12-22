@@ -23,8 +23,8 @@ Powered by API Magic
 
 ## Creative Tools Behind ChefK              
 Editor: Visual Studio Code                
-Design Inspiration: Figma ![prototype link](https://www.figma.com/file/RKMETShDADGmAHA1VSsv00/ChefK?type=design&node-id=0%3A1&mode=design&t=S81qTFgjpntzhIvP-1)                 
+Design Inspiration: Figma [prototype link](https://www.figma.com/file/RKMETShDADGmAHA1VSsv00/ChefK?type=design&node-id=0%3A1&mode=design&t=S81qTFgjpntzhIvP-1)                 
 Brand Logo Crafted by: BrandCrowd                 
 Imagery Sourced from: Pinterest, Google                                 
 Unlock the flavors of the world and unleash your inner chef with ChefK – where every dish is a masterpiece waiting to be created!                         
-Design: Figma ![prototype link](https://www.figma.com/file/RKMETShDADGmAHA1VSsv00/ChefK?type=design&node-id=0%3A1&mode=design&t=S81qTFgjpntzhIvP-1)                  
+Design: Figma [prototype link](https://www.figma.com/file/RKMETShDADGmAHA1VSsv00/ChefK?type=design&node-id=0%3A1&mode=design&t=S81qTFgjpntzhIvP-1)                  
