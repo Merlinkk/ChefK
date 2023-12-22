@@ -3,6 +3,8 @@
 # ChefK - Unveiling Culinary Excellence 🍳
 Welcome to ChefK, where culinary artistry meets innovation! Crafted with HTML, CSS, and JavaScript, ChefK is your gateway to a world of exquisite flavors and gastronomic delights. Whether you're a seasoned chef or an aspiring home cook, ChefK is your companion on the journey to culinary mastery.         
 
+https://github.com/Merlinkk/ChefK/assets/80953200/55856a25-bf63-4a6a-9a0c-4e3968f67938
+
 ## Explore the Delights of ChefK
 ### 1. Serendipitous Recipes           
 Embark on a culinary adventure with our serendipitous recipe selector. Click the "Surprise Me" button, and let ChefK whisk you away to discover tantalizing recipes that spark joy and satisfy cravings.
