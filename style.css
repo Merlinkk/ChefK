@@ -349,13 +349,6 @@ hr {
   align-items: center;
 }
 
-/* nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-} */
 
 .section {
   margin-top: 100px;
@@ -400,39 +393,7 @@ hr {
   color: white;
 }
 
-/* .quote{
-    animation: glow 1s ease-in-out infinite alternate;
-}
 
-.recipeContainer h1{
-    animation: glowW 1s ease-in-out infinite alternate;
-} */
-
-/* 
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7AE18C
-    }
-    
-    to {
-      text-shadow: 0 0 20px #7AE18C, 0 0 30px #7AE18C, 0 0 40px #7AE18C
-    }
-  }
-
-  @keyframes glowW {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff
-    }
-    
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #fff
-    }
-  } */
-
-/* ::-webkit-scrollbar {
-  display: none;
-} */
-/*  */
 ::-webkit-scrollbar {
   width: 6px; /* width of the entire scrollbar */
 }

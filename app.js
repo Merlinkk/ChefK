@@ -1,37 +1,36 @@
-const title = document.getElementById("recipeName"); // <input id="recipeName" type="text" />
-const foodImg = document.getElementById("mainImg"); // <img id="mainImg">
-const foodContainerMain = document.querySelector(".recipeContainer"); // <div id="foodContainerMain">
+// assinging all html elements a const name
+const title = document.getElementById("recipeName"); 
+const foodImg = document.getElementById("mainImg"); 
+const foodContainerMain = document.querySelector(".recipeContainer");
 const popup = document.getElementById("popup");
 const popupName = document.getElementById("popupName");
 const foodVideo = document.querySelector("iframe");
 const popupImgLink = document.getElementById("imgLink");
 const cross1 = document.getElementById("cross1");
 const cross2 = document.getElementById("cross2");
-
 const youtubeLink = document.getElementById('yLink')
-
-// const youtube = document.getElementById("yTlogo");
-
 const fail = document.getElementById("fail");
-
 const searchBtn = document.getElementById("btn1");
-
 const ingredientList = document.getElementById("ingList");
 const instructions = document.getElementById("instPara");
-
-const popupImg = document.getElementById("popupImg"); // <img id="popupImg">
-const discover = document.getElementById("discover"); // <button id="discover">
-
+const popupImg = document.getElementById("popupImg"); 
+const discover = document.getElementById("discover"); 
 const loader = document.getElementById("loader");
 const mealText = document.querySelector(".mealText");
+const searchResults = document.getElementById("searchResults");
+const searchGlass = document.getElementById("searchGlass");
+const resultList = document.getElementById("resultContainer");
 
-// youtube.style.display = "none";
-
+// starting loader from the start
 loader.style.display = "flex";
+
+// initiating function at onload
 fetchMeal(title, foodImg);
 
+// failure message hidden
 fail.style.display = "none";
 
+// ramdom meal fetch
 function fetchMeal() {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
@@ -57,17 +56,14 @@ function fetchMeal() {
     });
 }
 
-// foodImg.addEventListener("click", () => {
-//   popup.style.display = "flex";
-//   document.body.style.overflow = "hidden";
-// });
-
+// opening popup when clicked on searched elements
 function showPop(id){
   fetchByID(id)
   popup.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
 
+// rendereing meal in popup
 function renderMeal(data) {
   popupImg.src = data.strMealThumb;
   popupName.innerHTML = data.strMeal;
@@ -84,6 +80,7 @@ function renderMeal(data) {
   );
 }
 
+// slicing video id form link to make an iframe element
 function videoId(url) {
   const parts = url.split("=");
   const videoId = parts[parts.length - 1];
@@ -91,6 +88,7 @@ function videoId(url) {
   return videoId;
 }
 
+// escape key functionality close popup
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     popup.style.display = "none";
@@ -98,19 +96,24 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+// cross to exit popup - desktop version
 cross1.addEventListener("click", () => {
   popup.style.display = "none";
   document.body.style.overflow = "auto";
 });
+
+// cross to exit popup - mobile version
 cross2.addEventListener("click", () => {
   popup.style.display = "none";
   document.body.style.overflow = "auto";
 });
 
+// function to make img src links from ingredient name
 function fetchIngredientImage(ingredient) {
   return `https://www.themealdb.com/images/ingredients/${ingredient}-Small.png`;
 }
 
+// assembling ingredients data and returning an array with ingredients and their measure
 function ingredientsData(data) {
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
@@ -125,6 +128,7 @@ function ingredientsData(data) {
   return ingredients;
 }
 
+// this function takes the ingredient name and converts it into a src link for the img tag
 function renderIngredientImage(data) {
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
@@ -137,6 +141,7 @@ function renderIngredientImage(data) {
   return ingredients;
 }
 
+// function for making a li with the ingredient image, name and measure
 function renderIngredients(imageLinks, ingredients) {
   ingredientList.innerHTML=""
   for (let i = 0; i < ingredients.length; i++) {
@@ -151,18 +156,17 @@ function renderIngredients(imageLinks, ingredients) {
   }
 }
 
+// function for rendering instructions 
 function renderInstructions(data) {
   let str = data.strInstructions;
 
   instructions.innerText = str;
 }
 
-const searchResults = document.getElementById("searchResults");
-const searchGlass = document.getElementById("searchGlass");
-const resultList = document.getElementById("resultContainer");
-
+// hiding the searchResult div
 searchResults.style.display = "none";
 
+// adding eventlisteners for the searchGlass icon
 searchGlass.addEventListener("click", () => {
   document.getElementById("searchResults").style.display = "initial";
   let query = document.getElementById("search").value;
@@ -172,6 +176,7 @@ searchGlass.addEventListener("click", () => {
   scroll(searchResults);
 });
 
+// adding event listener for searchButton
 searchBtn.addEventListener("click", () => {
   document.getElementById("searchResults").style.display = "initial";
   let query = document.getElementById("search").value;
@@ -181,6 +186,7 @@ searchBtn.addEventListener("click", () => {
   scroll(searchResults);
 });
 
+// funciton for fetching mealData by Category
 function fetchByCategory(category) {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
     .then((res) => res.json())
@@ -199,6 +205,7 @@ function fetchByCategory(category) {
     });
 }
 
+// function for rendering search results in the bottom of the page
 function renderFoodArray(meals) {
   resultList.innerHTML = "";
   for (let i = 0; i < meals.length; i++) {
@@ -215,14 +222,15 @@ function renderFoodArray(meals) {
   }
   // console.log(meals[0].strMeal)
 }
-//
 
+// function to display the popup after refreshing the data inside it 
 function fetchPopUp(Id) {
   fetchByID(Id);
   popup.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
 
+// funciton to fetch by ID
 function fetchByID(Id) {
   loader.style.display = "flex";
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Id}`)
@@ -238,17 +246,20 @@ function fetchByID(Id) {
     });
 }
 
+// function to scroll smoothly withing the page
 function scroll(dest) {
   const target = document.documentElement;
   dest.scrollIntoView({ behavior: "smooth" });
 }
 
+// adding an eventlistener to the discover button to get ramdom meals 
 discover.addEventListener("click", () => {
   loader.style.display='flex'
   fetchMeal(title, foodImg);
   scroll(foodImg);
 });
 
+// enter eventlistener to listen for enter key 
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     document.getElementById("searchResults").style.display = "initial";

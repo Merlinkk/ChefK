@@ -9,15 +9,15 @@
 </head>
 <body>
     
+    <!-- loader div -->
     <div id="loader">
         <div id="loader-circle"></div>
     </div>
-    <!--  -->
+
+    <!-- popup div -->
     <div id="popup">
-    
         <div class="left1">
             <button id="cross1" class="close">x</button>
-            
             <a id="yLink" target="_blank" href=""><span id="yTlogo" ><img src="./assets/youtube.png" alt=""></span></a>
             <div class="areaC">
                 <h1>Area: <span class="modalText" id="areaIN"></span> </h1>
@@ -52,7 +52,7 @@
     </div>
 
 
-
+<!-- nav bar  -->
     <nav>
         <div class="logo">
             <div class="icon">
@@ -69,8 +69,9 @@
         </div>
     </nav>
 
-
+    <!-- intro section -->
     <div class="section">
+        <!-- left section  -->
         <div class="left">
             <div class="input">
                 <input type="text" placeholder="Recipe for a meal?" name="" id="search">
@@ -85,39 +86,40 @@
             </div>
         </div>
 
+        <!-- right section -->
         <div class="right">
             <img src="./assets/food.png" alt="">
         </div>
     </div>
 
     <hr>
-
+    <!-- random recipe container -->
     <div class="recipeContainer">
         <h1 class="mealText">Delve into today's culinary adventure with our featured recipe:</h1>
         <img id="arrow" class="arrow" src="./assets/arrow-removebg-preview.png" alt="">
         
         <div class="recipeBox">
             <img id="mainImg" src="" alt="">
-            
             <h2 id="recipeName"></h2>
-            
         </div>
-
     </div> 
+
     <hr>
-    
+    <!-- search results div -->
     <div id="searchResults">
         <h1>Search results for <span id="searchRl"></span></h1>
-        <ul id="resultContainer">
-            
+        <ul id="resultContainer"> 
         </ul>
+
         <div style="text-align: center;">
+            <!-- fail text if result not found -->
             <h2 id="fail">
                 Sorry, no results found. Try searching for something else.
             </h2>
         </div>
     </div>
 
+    <!-- footer -->
     <footer>
         <div class="footDiv">
         <h1 class="foot">ChefK</h1>
@@ -129,7 +131,7 @@
     </footer>
 
 
-
+<!-- link to js file -->
     <script src="./app.js"></script>
 </body>
 </html>
